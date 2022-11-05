@@ -14,5 +14,18 @@ jobs:
     runs-on: ubuntu-latest
     #list of steps to perform task
     steps: 
-    - name: basic test
-      run: echo "the current time and date in Github is $(date)"
+    - name: Send GitHub Action trigger data to Slack workflow
+      id: slack
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+      # This data can be any valid JSON from a previous step in the GitHub Action
+        payload: |
+          {
+            "Name": "X",
+            "Metriculation": "X",
+            "Email": "X",
+            "Repository": "X",
+            "Deployment": "X"
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TEST }}
