@@ -20,48 +20,57 @@ jobs:
       with:
       # This data can be any valid JSON from a previous step in the GitHub Action
         payload: |
-                {
-                  
-                "text": 
-                    {
-                      "type": "section",
-                      "fields": [
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Name*"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Metriculation*"
-                        },
+                {  
+                "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                "blocks": [
+                     {
+                      "type": "header",
+                      "text": 
                         {
                           "type": "plain_text",
-                          "text": "X"
-                        },
-                        {
-                          "type": "plain_text",
-                          "text": "X"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Email*"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Repository*"
-                        },
-                        {
-                          "type": "plain_text",
-                          "text": "X"
-                        },
-                        {
-                          "type": "plain_text",
-                          "text": "X"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Deployment* \n X"
+                          "text": "DipSA55 CI/CD Assignment Submission",
+                          "emoji": true
                         }
+                      },
+                      {
+                          "type": "section",
+                          "fields": [
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "*Name:*\n XIE WENWEN"
+                              },
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "Matriculation:*\n"
+                              }
+                          ]
+                      },
+                      {
+                          "type": "section",
+                          "fields": [
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "*Email:*\n e1045734@u.nus.edu"
+                              },
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "Repositary:*\nhttps://github.com/xiewenwen95/CICD-Assignment.git"
+                              }
+                          ]
+                      },
+                      {
+                          "type": "section",
+                          "fields": [
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "*Deployment:*\n 1 "
+                              },
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "app"
+                              }
+                          ]
+                      },
                       ]
                     }
                       
