@@ -41,7 +41,7 @@ jobs:
                               },
                               {
                                   "type": "mrkdwn",
-                                  "text": "Matriculation:*\n"
+                                  "text": "Matriculation:*\nA0265059X"
                               }
                           ]
                       },
@@ -63,7 +63,7 @@ jobs:
                           "fields": [
                               {
                                   "type": "mrkdwn",
-                                  "text": "*Deployment:*\n 1 "
+                                  "text": "*Deployment:*\nhttps://cicd-assignment-production.up.railway.app/ "
                               }
                             ]
                           },
@@ -71,7 +71,7 @@ jobs:
                                  "type": "section",
                                  "text": {
                                   "type": "mrkdwn",
-                                  "text": "app"
+                                  "text": "<https://cicd-assignment-production.up.railway.app/|Open Application>"
                               }
                           }
                       ]
