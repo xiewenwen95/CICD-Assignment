@@ -64,17 +64,18 @@ jobs:
                               {
                                   "type": "mrkdwn",
                                   "text": "*Deployment:*\n 1 "
-                              },
+                              }
+                            ]
+                          },
                               {
+                                 "type": "section",
+                                 "text": {
                                   "type": "mrkdwn",
                                   "text": "app"
                               }
-                          ]
-                      },
+                          }
                       ]
-                    }
-                      
-                  
                 }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TEST }}
+        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
