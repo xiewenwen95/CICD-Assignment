@@ -21,57 +21,58 @@ jobs:
       # This data can be any valid JSON from a previous step in the GitHub Action
         payload: |
                 {
-                  "text":"1",
-                  "blocks": [
-                    {
-                      "type": "header",
-                      "text": {
-                        "type": "plain_text",
-                        "text": "DipSA55 CI/CD Assignment Submission"
-                      }
-                    },
-                    {
-                      "type": "section",
-                      "fields": [
+                  "text": {
+                        "blocks": [
                         {
-                          "type": "mrkdwn",
-                          "text": "*Name*"
+                          "type": "header",
+                          "text": {
+                            "type": "plain_text",
+                            "text": "DipSA55 CI/CD Assignment Submission"
+                          }
                         },
                         {
-                          "type": "mrkdwn",
-                          "text": "*Metriculation*"
-                        },
-                        {
-                          "type": "plain_text",
-                          "text": "X"
-                        },
-                        {
-                          "type": "plain_text",
-                          "text": "X"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Email*"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Repository*"
-                        },
-                        {
-                          "type": "plain_text",
-                          "text": "X"
-                        },
-                        {
-                          "type": "plain_text",
-                          "text": "X"
-                        },
-                        {
-                          "type": "mrkdwn",
-                          "text": "*Deployment* \n X"
+                          "type": "section",
+                          "fields": [
+                            {
+                              "type": "mrkdwn",
+                              "text": "*Name*"
+                            },
+                            {
+                              "type": "mrkdwn",
+                              "text": "*Metriculation*"
+                            },
+                            {
+                              "type": "plain_text",
+                              "text": "X"
+                            },
+                            {
+                              "type": "plain_text",
+                              "text": "X"
+                            },
+                            {
+                              "type": "mrkdwn",
+                              "text": "*Email*"
+                            },
+                            {
+                              "type": "mrkdwn",
+                              "text": "*Repository*"
+                            },
+                            {
+                              "type": "plain_text",
+                              "text": "X"
+                            },
+                            {
+                              "type": "plain_text",
+                              "text": "X"
+                            },
+                            {
+                              "type": "mrkdwn",
+                              "text": "*Deployment* \n X"
+                            }
+                          ]
                         }
                       ]
-                    }
-                  ]
+                  }
                 }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TEST }}
