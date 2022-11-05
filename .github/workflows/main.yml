@@ -4,7 +4,7 @@ name: My first Workflow
 on:
   push:
     branches:
-      - 'v**.+'
+      - 'v[0-9].[0-9]'
 
 #jobs in the workflow
 jobs:
