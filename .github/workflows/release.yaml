@@ -1,7 +1,7 @@
 name: Release and deploy go-fortune
 
 on:
- push
+ push:
   branches:
   - "release/.+"
 
