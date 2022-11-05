@@ -5,9 +5,10 @@ on:
   push:
     branches:
       - 'v**.**'
-      - '!v**.**.**'
-      - '!v**.**-beta'
-      - '!feature-**'
+    branches-ignore: 
+      - 'v**.**.**'
+      - 'v**.**-beta'
+      - 'feature-**'
 
 #jobs in the workflow
 jobs:
