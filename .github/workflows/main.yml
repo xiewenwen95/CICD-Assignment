@@ -4,11 +4,7 @@ name: My first Workflow
 on:
   push:
     branches:
-      - 'v**.**'
-    branches-ignore: 
-      - 'v**.**.**'
-      - 'v**.**-beta'
-      - 'feature-**'
+      - 'v**.+'
 
 #jobs in the workflow
 jobs:
