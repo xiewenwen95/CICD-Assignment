@@ -13,7 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-
       - name: Deploy
         run: railway up
         env:
