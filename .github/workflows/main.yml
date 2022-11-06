@@ -14,5 +14,68 @@ jobs:
     runs-on: ubuntu-latest
     #list of steps to perform task
     steps: 
-    - name: basic test
-      run: echo "the current time and date in Github is $(date)"
+    - name: Send GitHub Action trigger data to Slack workflow
+      id: slack
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+      # This data can be any valid JSON from a previous step in the GitHub Action
+        payload: |
+                {  
+                "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+                "blocks": [
+                     {
+                      "type": "header",
+                      "text": 
+                        {
+                          "type": "plain_text",
+                          "text": "DipSA55 CI/CD Assignment Submission",
+                          "emoji": true
+                        }
+                      },
+                      {
+                          "type": "section",
+                          "fields": [
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "*Name:*\n XIE WENWEN"
+                              },
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "Matriculation:*\nA0265059X"
+                              }
+                          ]
+                      },
+                      {
+                          "type": "section",
+                          "fields": [
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "*Email:*\n e1045734@u.nus.edu"
+                              },
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "Repositary:*\nhttps://github.com/xiewenwen95/CICD-Assignment.git"
+                              }
+                          ]
+                      },
+                      {
+                          "type": "section",
+                          "fields": [
+                              {
+                                  "type": "mrkdwn",
+                                  "text": "*Deployment:*\nhttps://cicd-assignment-production.up.railway.app/ "
+                              }
+                            ]
+                          },
+                              {
+                                 "type": "section",
+                                 "text": {
+                                  "type": "mrkdwn",
+                                  "text": "<https://cicd-assignment-production.up.railway.app/|Open Application>"
+                              }
+                          }
+                      ]
+                }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_SUB }}
+        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
