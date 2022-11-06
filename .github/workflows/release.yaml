@@ -2,8 +2,8 @@ name: Release and deploy go-fortune
 
 on: 
   push:
-    tags:
-      - '*'
+    branches:
+      - v[0-9].v[0-9]
 jobs:
   build:
     runs-on: ubuntu-latest
