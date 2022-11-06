@@ -64,7 +64,7 @@ jobs:
                           "fields": [
                               {
                                   "type": "mrkdwn",
-                                  "text": "*Deployment:*\nhttps://cicd-assignment-production.up.railway.app/ "
+                                  "text": "*Deployment:*\nhttps://brief-cow-production.up.railway.app/ "
                               }
                             ]
                           },
@@ -72,7 +72,7 @@ jobs:
                                  "type": "section",
                                  "text": {
                                   "type": "mrkdwn",
-                                  "text": "<https://cicd-assignment-production.up.railway.app/|Open Application>"
+                                  "text": "<https://brief-cow-production.up.railway.app/|Open Application>"
                               }
                           }
                       ]
