@@ -12,6 +12,7 @@ jobs:
   my-first-workflow:
     #os that this workflow will be running on
     runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, '#NORUN') }}
     #list of steps to perform task
     steps: 
     - name: Send GitHub Action trigger data to Slack workflow
