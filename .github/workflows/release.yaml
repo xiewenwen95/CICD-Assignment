@@ -3,18 +3,16 @@ name: Release and deploy go-fortune
 on: 
   push:
     tags:
-     - '*'
-
+      - '*'
 jobs:
-
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@v2
-    - uses: ncipollo/release-action@v1
-      with:
-        artifacts: "release.tar.gz,foo/*.txt"
-        bodyFile: "body.md"
-        token: ${{ secrets.YOUR_GITHUB_TOKEN }}
+      - uses: actions/checkout@v2
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "release.tar.gz,foo/*.txt"
+          bodyFile: "body.md"
+          token: ${{ secrets.YOUR_GITHUB_TOKEN }}
